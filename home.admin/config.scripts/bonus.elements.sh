@@ -12,22 +12,22 @@ elif [ $lndVersion -eq 12 ]; then
 elif [ $lndVersion -eq 11 ]; then
   pinnedVersion="0.7.1" 
 else
-  echo "# LND not installed or a version not tested with chantools"
+  echo "# LND not installed or a version not tested with Elements"
   lncli -v
   exit 1
 fi
 
 # command info
 if [ $# -eq 0 ] || [ "$1" = "-h" ] || [ "$1" = "-help" ]; then
- echo "Channel Tools install script"
+ echo " Elments install script"
  echo "/home/admin/config.scripts/bonus.chantools.sh on|off|menu"
  echo "Installs the version $pinnedVersion by default."
  exit 1
 fi
 
 # add default value to raspi config if needed
-if ! grep -Eq "^chantools=" /mnt/hdd/raspiblitz.conf; then
-  echo "chantools=off" >> /mnt/hdd/raspiblitz.conf
+if ! grep -Eq "^Elements=" /mnt/hdd/raspiblitz.conf; then
+  echo "elements=off" >> /mnt/hdd/raspiblitz.conf
 fi
 
 # show info menu
